@@ -1,21 +1,54 @@
-## Projeto:
-O DevRadar é um projeto que visa conectar desenvolvedores próximos a você que trabalham com as mesmas tecnologias.
+## DevRadar
 
-O projeto DevRadar representa um marco significativo em minha jornada de desenvolvimento pessoal. Nesse projeto, criei uma aplicação que aproveita a API do GitHub para obter dados de utilizadores, incluindo seus nomes, linguagens de programação e tecnologias de interesse. O objetivo central foi permitir que desenvolvedores fossem encontrados com base em sua localização geográfica e habilidades técnicas específicas.
+### 💻 Projeto
 
-O DevRadar é caracterizado por três componentes principais:
+DevRadar é um aplicativo de pesquisa de usuários do GitHub que ajuda a pesquisar por nome de usuário e ver as informações desse usuário.
 
-### Consumo da API do GitHub: 
-Desenvolvi a funcionalidade de integração com a API do GitHub, permitindo que a aplicação recuperasse detalhes essenciais dos perfis dos desenvolvedores, como linguagens de programação preferidas e tecnologias que utilizam.
+### ⚙ Como rodar este projeto
 
-### Localização e Raio de Busca: 
-Implementei um recurso no qual os utilizadores da aplicação podem inserir uma localização geográfica e definir um raio de busca em quilômetros. A aplicação, então, exibe desenvolvedores que atendem a esses critérios específicos.
+### Pré-requisitos
 
-### Interface Visual Amigável: 
-Criei uma interface de usuário intuitiva que exibe os resultados de pesquisa de forma clara e organizada, permitindo aos utilizadores encontrar os desenvolvedores mais relevantes com base em suas preferências de tecnologia e localização.
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
+<b>[Git](https://git-scm.com)</b>
+
+<b>[Node.js](https://nodejs.org/en/)</b>
+
+E também será preciso um editor, eu indico o <b>[VSCode](https://code.visualstudio.com/)</b>
+
+### 🧭 Rodando o Backend e Web (Frontend)
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/Valerianofilipec/DevRadar
+
+# Acesse a pasta do backend no terminal/cmd
+$ cd DevRadar/backend
+
+# Instale as dependências
+$ npm install ou yarn
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev ou yarn dev
+
+# O servidor inciará na porta:3333 - acesse http://localhost:3333
+
+# Acesse a pasta do frontend no terminal/cmd
+$ cd DevRadar/web
+
+# Instale as dependências
+$ npm install ou yarn
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run start ou yarn start
+
+# O servidor inciará na porta:3000 - acesse http://localhost:3000
+```
+
+### Conclusões
 O DevRadar foi um projeto valioso para aprimorar minhas habilidades em integração de APIs, desenvolvimento frontend e backend, bem como em conceitos de geolocalização. Além disso, essa experiência também me proporcionou uma compreensão mais profunda sobre a importância da usabilidade e da experiência do utilizador em projetos de software. Este projeto reflete o ditado que sigo: "O que não conheço aprendo, e o que sei melhoro, dia após dia".
 
 ## Tecnologias:
-Node.js, MongoDB, Express, Axios(p/ api_github.com), Yarn
-Valeriano Filipe Calológio
+Node.js, MongoDB, Express, Axios(p/ api_github.com)
+
+Feito com ❤️ by **Valerianofilipec** 🤙🏾

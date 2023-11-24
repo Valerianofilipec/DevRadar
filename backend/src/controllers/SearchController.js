@@ -1,5 +1,5 @@
 import { Dev } from '../models/Dev.js';
-import { parseStringAsArray } from '../models/utils/parseStringAsArray.js';
+import { parseStringAsArray } from '../utils/parseStringAsArray.js';
 
 export default{
     async index(request, response){//buscar todos devs no de raio 10 km & filtrar por tecnologias 

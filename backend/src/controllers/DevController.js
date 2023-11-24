@@ -1,7 +1,7 @@
 //index, show, store, update & destroy, são funções basicas de um controller
 import axios from 'axios';
 import { Dev } from '../models/Dev.js';
-import { parseStringAsArray } from '../models/utils/parseStringAsArray.js';
+import { parseStringAsArray } from '../utils/parseStringAsArray.js';
 
 export default{
     async index(request, response){

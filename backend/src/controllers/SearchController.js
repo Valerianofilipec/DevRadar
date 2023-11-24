@@ -1,7 +1,7 @@
-const Dev = require('../models/Dev')
-const parseStringAsArray = require('../utils/parseStringAsArray')
+import { Dev } from '../models/Dev.js';
+import { parseStringAsArray } from '../models/utils/parseStringAsArray.js';
 
-module.exports = {
+export default{
     async index(request, response){//buscar todos devs no de raio 10 km & filtrar por tecnologias 
         const { latitude, longitude, techs} = request.querty
         const techsArray = parseStringAsArray(techs)

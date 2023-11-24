@@ -7,10 +7,9 @@
     Body -> request.body (Dados para criação ou alteração de um registro)
  */ 
 //Express: micro-framework para as rotas da api//requisição de apenas a função 'Router' do express
-const { Router } = require('express');
-
-const DevController = require('./controllers/DevController');
-const SearchController = require('./controllers/SearchController');
+import { Router } from 'express';
+import DevController from '../controllers/DevController.js';
+import SearchController from '../controllers/SearchController.js';
 
 const routes = Router();
 
@@ -19,4 +18,4 @@ routes.post('/devs', DevController.store)
 //routes.delete('devs', DevController.destroy)
 routes.get('/search', SearchController.index)
 
-module.exports = routes;
+export {routes};

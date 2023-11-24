@@ -1,9 +1,9 @@
 //index, show, store, update & destroy, são funções basicas de um controller
-const axios =  require('axios')
-const Dev = require('../models/Dev')
-const parseStringAsArray = require('../utils/parseStringAsArray')
+import axios from 'axios';
+import { Dev } from '../models/Dev.js';
+import { parseStringAsArray } from '../models/utils/parseStringAsArray.js';
 
-module.exports = {
+export default{
     async index(request, response){
         const devs = await Dev.find()
         return response.json(devs)
@@ -31,15 +31,4 @@ module.exports = {
         }
         return response.json(dev)
     },
-    /*
-    ansyc update(){
-        //atualizar dados de um dev (como nome, avatar, bio, techs & localização)
-        const { github_username }= request.body
-        let dev = await Dev.findOneAndRemove({github_username})  // verificar a existencia do dev, p/ evitar duplicidade 
-        return response.json(dev)
-    }
-    ansyc destroy(){
-        // apagar um dev
-    }
-    */
 }

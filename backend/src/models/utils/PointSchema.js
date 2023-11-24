@@ -1,4 +1,4 @@
- const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
  const PointSchema = new mongoose.Schema({
      type: {
@@ -12,4 +12,4 @@
      }
  })
 
- module.exports = PointSchema
+export {PointSchema};

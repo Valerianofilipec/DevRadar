@@ -1,19 +1,20 @@
-const routes = require('./routes')
-const express = require('express')     // importando o express
-const cors = require('cors')
-const mongoose = require('mongoose') // importando o mongoose(MongoDB)
-require('dotenv').config() // Ocultar Credenciais do DB
-const app = express()
+import express from 'express';
+import cors from 'cors';
+import 'dotenv/config';
+import morgan from 'morgan';
+import { dbConnect } from './database/connect.js';
+import { routes } from './routes/index.js';
 
-console.log()
-mongoose.connect(process.env.DB_CONNECT,{
-  useNewUrlParser: true, 
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
+// Ocultar Credenciais do DB
+const server = express();
+const PORT = process.env.PORT | 3333;
+//dbConnect;
 
-})
-app.use(cors())                 //cors({origin:'http://localhost:3000'}) para restringir o acesso da aplicação 
-app.use(express.json())          //habilitar requisições do formato 'json' p/ qlqr rota c/ express
-app.use(routes)
-app.listen(3333)               //ouvindo a porta 33333
+server.use(cors()); //cors({origin:'http://localhost:3000'}) para restringir o acesso da aplicação 
+server.use(express.json());
+server.use(express.static("public"));
+server.use(morgan("dev"));
+server.use(routes);
+server.listen(3333, ()=>{
+    console.log("DevRadar Server is up");
+});

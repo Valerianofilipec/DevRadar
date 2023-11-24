@@ -16,6 +16,7 @@ li.dev-item header img{
 }
 li.dev-item header .user-info{
     margin-left: 10px;
+    margin-right: 10px;
 }
 .user-info strong{
     display: block;
@@ -41,3 +42,36 @@ li.dev-item a{
 li.dev-item a:hover{
     color:#325e18; 
 }
+
+li.dev-item header .action-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  @media (max-width:650px) {
+    li.dev-item header .action-buttons{
+      display: block;
+    }
+    .action-buttons button.delete {
+      margin-bottom: 5px ;
+    }
+  }
+  .action-buttons button.delete {
+    margin-right: 5px;
+    border: 0;
+    background: #f04d5a;
+    border-radius: 10px;
+    padding: 2px 5px;
+    font-size: 5px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.5s;
+  }
+  
+  .action-buttons button.delete:hover {
+    background: #e79494;
+  }

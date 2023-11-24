@@ -11,6 +11,8 @@ import DevItem from './components/DevItem'
 
 function App() {
   const [devs, setDevs] = useState([])
+  const [currentDev, setCurrentDev] = useState('');
+  const [title, setTitle] = useState('Cadastrar');
 
   useEffect(() =>{
     async function loadDevs(){
@@ -25,17 +27,46 @@ function App() {
     setDevs([...devs, response.data])
   }
 
+  async function handleUpdateDev(id, data){
+    const response = await api.put(`/devs/${id}`, data)
+    setDevs(devs.map(dev => dev._id === id ? response.data.devUpdated : dev))
+  }
+
+  async function handleDeleteDev(id){
+    await api.delete(`/devs/${id}`)
+    setDevs(devs.filter(dev => dev._id !== id))
+  }
+
+  function setForm(data){
+    if(data){
+      setTitle('Editar')
+      setCurrentDev(data)
+    }else{
+      setTitle('Cadastrar')
+      setCurrentDev(null)
+    }
+  }
+
   return (
     <div id="app">
       <aside>
-        <strong >Cadastrar</strong>
-        <DevForm onSubmit = {handleAddDev} />
+        <strong >{title}</strong>
+        <DevForm 
+          onSubmit={ currentDev ? handleUpdateDev : handleAddDev } 
+          onCancelClick={setForm} 
+          dev={currentDev}
+        />
       </aside>
       
       <main>
         <ul>
           {devs.map(dev => (
-            <DevItem key={dev._id} dev={dev}/> 
+            <DevItem 
+              key={dev._id} 
+              dev={dev}
+              onUpdateClick={setForm} 
+              onDeleteClick={handleDeleteDev} 
+            /> 
           ))}
         </ul>
       </main>
@@ -43,4 +74,4 @@ function App() {
     )
 }
 
-export default App;
+export default App
